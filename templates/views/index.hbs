@@ -34,7 +34,7 @@
 				<li><a href="#service">Services</a></li>
 				<!-- <li><a href="#pricing">Prices</a></li> -->
 				<li><a href="#team">Team</a></li>
-				<li><a href="#blog">Blog</a> </li>
+				<!-- <li><a href="#blog">Blog</a> </li> -->
 				<!-- <ul class="dropdown"> -->
 				<!-- <li><a href="blog-single.html">blog post</a></li> -->
 				<!-- </ul> -->
@@ -58,7 +58,7 @@
 						<h1 class="white-text">Event Planning, Production, Entertainment</h1>
 						<p class="white-text">value culture, value diversity, value arts and life.
 						</p>
-						<a class="btn white-btn" href="#blog">Experience the culture!</a>
+						<a class="btn white-btn" href="#portfolio">Experience the culture!</a>
 						<a class="btn main-btn" href="#service">Create Your Event</a>
 					</div>
 				</div>
@@ -113,7 +113,7 @@
 					<div class="about">
 						<i class="fa fa-mobile"></i>
 						<h3>The other side of the Ocean</h3>
-						<p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
+						<p>Maecenas tempus tellus eget condimentum</p>
 						<a href="/">Read more</a>
 					</div>
 				</div>
@@ -144,95 +144,21 @@
 				</div>
 				<!-- /Section header -->
 
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work1.png" alt="">
+				{{# each data.posts.results}}
+				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-4 col-xs-6 work">
+					<img src="{{{ cloudinaryUrl image crop='fit' }}}" class="img-responsive" alt="{{{ title }}}">
 					<div class="overlay"></div>
 					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
+						<span>{{{categoryList categories}}}</span>
+						<h3>{{title}}</h3>
 						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work1.png"><i class="fa fa-search"></i></a>
+							<a href="{{postUrl slug}}"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="{{{ cloudinaryUrl image crop='fit' }}}"><i class="fa fa-search"></i></a>
 						</div>
 					</div>
 				</div>
-				<!-- /Work -->
+				{{/each}}
 
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work2.jpg" alt="">
-					<div class="overlay"></div>
-					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
-						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work2.jpg"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /Work -->
-
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work3.jpg" alt="">
-					<div class="overlay"></div>
-					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
-						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work3.jpg"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /Work -->
-
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work4.jpg" alt="">
-					<div class="overlay"></div>
-					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
-						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work4.jpg"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /Work -->
-
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work5.jpg" alt="">
-					<div class="overlay"></div>
-					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
-						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work5.jpg"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /Work -->
-
-				<!-- Work -->
-				<div class="col-md-4 col-xs-6 work">
-					<img class="img-responsive" src="/images/work6.jpg" alt="">
-					<div class="overlay"></div>
-					<div class="work-content">
-						<span>Category</span>
-						<h3>Lorem ipsum dolor</h3>
-						<div class="work-link">
-							<a href="/"><i class="fa fa-external-link"></i></a>
-							<a class="lightbox" href="/images/work6.jpg"><i class="fa fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /Work -->
 
 			</div>
 			<!-- /Row -->
@@ -313,7 +239,7 @@
 					<div class="service">
 						<i class="fa fa-flask"></i>
 						<h3>Gifts and Promotional Products</h3>
-						<p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero.</p>
+						<p>Maecenas tempus tellus eget condimentum rhoncus sem.</p>
 					</div>
 				</div>
 				<!-- /service -->
@@ -523,7 +449,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team1.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Hong Jun.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -544,7 +470,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team2.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Yi Fan.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -565,7 +491,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team3.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Angela Zeng.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -575,7 +501,7 @@
 							</div>
 						</div>
 						<div class="team-content">
-							<h3>John Doe</h3>
+							<h3>Angela Zeng</h3>
 							<span>Event Coordinator</span>
 						</div>
 					</div>
@@ -586,7 +512,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team1.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Tony Yang.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -596,7 +522,7 @@
 							</div>
 						</div>
 						<div class="team-content">
-							<h3>John Doe</h3>
+							<h3>Tony Yang</h3>
 							<span>Sponsorship Manager</span>
 						</div>
 					</div>
@@ -607,7 +533,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team2.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Frank Wang.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -617,7 +543,7 @@
 							</div>
 						</div>
 						<div class="team-content">
-							<h3>John Doe</h3>
+							<h3>Frank Wang</h3>
 							<span>Community Relations Coordinator</span>
 						</div>
 					</div>
@@ -628,7 +554,7 @@
 				<div class="col-sm-4">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="/images/team3.jpg" alt="">
+							<img class="img-responsive" src="/images/Team Member Tommy Jiang.jpg" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="/"><i class="fa fa-facebook"></i></a>
@@ -638,7 +564,7 @@
 							</div>
 						</div>
 						<div class="team-content">
-							<h3>John Doe</h3>
+							<h3>Tommy Jiang</h3>
 							<span>Communication Assistant</span>
 						</div>
 					</div>
@@ -654,7 +580,7 @@
 	</div>
 	<!-- /Team -->
 
-	
+
 
 	<!-- Contact -->
 	<div id="contact" class="section md-padding">
