@@ -34,6 +34,14 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+
+	// "wysiwyg images": true,
+	"wysiwyg cloudinary images": true,
+	"wysiwyg additional plugins": "paste",
+	"wysiwyg additional options": {
+		paste_data_images: true,
+		external_plugins: { uploadimage: "/js/uploadimage/plugin.min.js" }
+	}
 });
 
 // Load your project's Models
@@ -61,6 +69,8 @@ keystone.set('nav', {
 });
 
 // Start Keystone to connect to your database and initialise the web server
+
+keystone.set("signin logo", "../images/logo.png");
 
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {

@@ -1,9 +1,66 @@
-<div class="container">
-	<h1>Blog</h1>
-</div>
-<div class="container">
+<!-- Header -->
+<header>
+
+	<!-- Nav -->
+	<nav id="nav" class="navbar">
+		<div class="container">
+
+			<div class="navbar-header">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a href="/">
+						<img class="logo" src="/images/logo.png" alt="logo">
+					</a>
+				</div>
+				<!-- /Logo -->
+
+				<!-- Collapse nav button -->
+				<div class="nav-collapse">
+					<span></span>
+				</div>
+				<!-- /Collapse nav button -->
+			</div>
+
+			<!--  Main navigation  -->
+			<ul class="main-nav nav navbar-nav navbar-right">
+				<li><a href="/#home">Home</a></li>
+				<li><a href="/#about">About</a></li>
+				<li><a href="/#portfolio">Portfolio</a></li>
+				<li><a href="/#service">Services</a></li>
+				<li><a href="/#pricing">Prices</a></li>
+				<li><a href="/#team">Team</a></li>
+				<li><a href="/blog">Blog</a>
+					<!-- <ul class="dropdown">
+						<li><a href="#">blog post</a></li>
+					</ul> -->
+				</li>
+				<li><a href="/#contact">Contact</a></li>
+			</ul>
+			<!-- /Main navigation -->
+
+		</div>
+	</nav>
+	<!-- /Nav -->
+
+	<!-- header wrapper -->
+	<div class="header-wrapper sm-padding bg-grey">
+		<div class="container">
+			<h2>Blog Page</h2>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /header wrapper -->
+
+</header>
+<!-- /Header -->
+
+
+<div class="container md-padding">
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
+		<div class="col-md-9">
 			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
 			<div class="blog">
 				{{# each data.posts.results}}
@@ -19,15 +76,37 @@
 				{{/each}}
 			</div>
 		</div>
-		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
+
+		<!-- Aside -->
+		<aside id="aside" class="col-md-3">
+
+			<!-- Search -->
+			<div class="widget">
+				<div class="widget-search">
+					<form role="search" action="/search" method="GET">
+
+							<input class="search-input" type="text" placeholder="search" id="keywords" name="keywords">
+							<button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+					</form>
+				</div>
 			</div>
-		</div>
+			<!-- /Search -->
+
+			<!-- Category -->
+			<div class="widget">
+				<h3 class="title">Category</h3>
+				<div class="widget-category">
+					<a href="/blog">All Categories</a>
+					{{# each data.categories }}
+					<a href="{{categoryUrl key}}">{{name}}</a>
+					{{/each}}
+				</div>
+			</div>
+			<!-- /Category -->
+		</aside>
+		<!-- /Aside -->
+
 	</div>
 	{{>pagination}}
 </div>

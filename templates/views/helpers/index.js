@@ -326,5 +326,20 @@ module.exports = function () {
 		return obj._[underscoreMethod].format();
 	};
 
+	_helpers.matchCategory = function(categories, id) {
+		//console.log(categories[0], id[0]);
+
+		var cateObj = {};
+		for (var i = 0; i < categories.length; i++) {
+			if (categories[i].id == id[0]) {
+				cateObj = categories[i];
+				break;
+			}
+		}
+		//console.log(JSON.stringify(cateObj));
+
+		return cateObj.name;
+	};
+
 	return _helpers;
 };
