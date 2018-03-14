@@ -1,21 +1,138 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
-				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					{{{data.post.content.extended}}}
+<!-- Header -->
+	<header>
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="/">
+							<img class="logo" src="/images/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
 				</div>
-			</article>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="/#home">Home</a></li>
+					<li><a href="/#about">About</a></li>
+					<li><a href="/#portfolio">Portfolio</a></li>
+					<li><a href="/#service">Services</a></li>
+					<li><a href="/#pricing">Prices</a></li>
+					<li><a href="/#team">Team</a></li>
+					<li><a href="/blog">blog</a></li>
+					<li><a href="/#contact">Contact</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- header wrapper -->
+		<div class="header-wrapper sm-padding bg-grey">
+			<div class="container">
+				<h2>{{{categoryList data.post.categories prefix="Posted in "}}}</h2>
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+					<li class="breadcrumb-item active">Single Post</li>
+				</ul>
+			</div>
 		</div>
+		<!-- /header wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Blog -->
+	<div id="blog" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Main -->
+				<main id="main" class="col-md-9">
+					<div class="blog">
+						{{#if data.post.image}}
+						<div class="blog-img">
+							<img class="img-responsive" src="{{{cloudinaryUrl data.post.image crop='fit' }}}" alt="">
+						</div>
+						{{/if}}
+						<div class="blog-content">
+							<ul class="blog-meta">
+								<li><i class="fa fa-user"></i>{{data.post.author.name.first}}</li>
+								<li><i class="fa fa-clock-o"></i>{{formatDate data.post.publishedDate}}</li>
+								<!-- <li><i class="fa fa-comments"></i>57</li> -->
+							</ul>
+							<h3>{{data.post.title}}</h3>
+							<p>{{{data.post.content.extended}}}</p>
+						</div>
+
+						<!-- blog tags -->
+						<!-- <div class="blog-tags">
+							<h5>Tags :</h5>
+							<a href="#"><i class="fa fa-tag"></i>Web</a>
+							<a href="#"><i class="fa fa-tag"></i>Design</a>
+							<a href="#"><i class="fa fa-tag"></i>Marketing</a>
+							<a href="#"><i class="fa fa-tag"></i>Development</a>
+							<a href="#"><i class="fa fa-tag"></i>Branding</a>
+							<a href="#"><i class="fa fa-tag"></i>Photography</a>
+						</div> -->
+						<!-- blog tags -->
+
+					</div>
+				</main>
+				<!-- /Main -->
+
+
+				<!-- Aside -->
+				<aside id="aside" class="col-md-3">
+
+					<!-- Search -->
+					<div class="widget">
+						<div class="widget-search">
+							<form role="search" action="/search" method="GET">
+
+									<input class="search-input" type="text" placeholder="search" id="keywords" name="keywords">
+									<button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+							</form>
+						</div>
+					</div>
+					<!-- /Search -->
+
+					<!-- Category -->
+					<div class="widget">
+						<h3 class="title">Category</h3>
+						<div class="widget-category">
+							<a href="/blog">All Categories</a>
+							{{# each data.categories }}
+							<a href="{{categoryUrl key}}">{{name}}</a>
+							{{/each}}
+						</div>
+					</div>
+					<!-- /Category -->
+				</aside>
+				<!-- /Aside -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
 	</div>
-</div>
+	<!-- /Blog -->

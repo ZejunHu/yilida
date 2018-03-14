@@ -326,6 +326,12 @@ module.exports = function () {
 		return obj._[underscoreMethod].format();
 	};
 
+	////////////////////////////////////////////////////////////////
+	_helpers.logsth = function(sth) {
+		console.log(sth);
+		return;
+	};
+
 	_helpers.matchCategory = function(categories, id) {
 		//console.log(categories[0], id[0]);
 
@@ -339,6 +345,11 @@ module.exports = function () {
 		//console.log(JSON.stringify(cateObj));
 
 		return cateObj.name;
+	};
+
+	_helpers.formatDate = function(date) {
+		//console.log(date);
+		return date.toDateString();
 	};
 
 	return _helpers;

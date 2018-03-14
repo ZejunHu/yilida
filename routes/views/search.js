@@ -42,35 +42,17 @@ exports = module.exports = function(req, res) {
 			locals.data.keywords = locals.filters.keywords;
 
 			// search the full-text index
-			var q = keystone
-				.list("Post")
-				.paginate({
+			var q = keystone.list("Post").paginate({
 					page: req.query.page || 1,
 					perPage: 10,
 					maxPages: 10,
 					filters: {
+						title: new RegExp(locals.data.keywords, "i"),
 						state: "published"
 					}
 				})
 				.sort("-publishedDate")
-				.populate("author categories")
-				.model.find(
-					{
-						// title: new RegExp("^" + locals.data.keywords + "$", "i")
-						title: new RegExp(locals.data.keywords, "i"),
-						state: "published"
-					},
-					function(err, res) {
-						// Do your action here..
-						// locals.data.posts = res;
-
-						//console.log(res);
-						if (res == "") {
-							locals.data.invalid = "Invalid search";
-						}
-						//next(err);
-					}
-				);
+				.populate("author categories");
 
 			q.exec(function(err, results) {
 				locals.data.posts = results;

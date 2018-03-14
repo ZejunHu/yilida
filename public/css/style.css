@@ -1339,6 +1339,22 @@ header {
     margin-left: 15px;
 }
 
+.post {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 3rem;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .post-img-container {
+    margin-top: -36px;
+  }
+}
+
 
 /*------------------------------------*\
 	Blog sidebar
@@ -1479,11 +1495,12 @@ header {
 }
 
 
-.contact-form .input:nth-child(1), .contact-form .input:nth-child(2) {
+.first-line {
     width: calc(50% - 10px);
+    display: inline-block;
 }
 
-.contact-form .input:nth-child(2) {
+.first-line-right {
     margin-left: 15px;
 }
 
