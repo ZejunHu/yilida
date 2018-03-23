@@ -1139,6 +1139,17 @@ header {
     opacity: 1;
 }
 
+.team .team-description {
+  opacity: 0;
+  color: white;
+  font-size: 24px;
+  width: 80%;
+}
+
+.team:hover .team-description {
+    opacity: 1;
+}
+
 
 /*------------------------------------*\
 	Blog

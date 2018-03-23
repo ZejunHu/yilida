@@ -6,5 +6,5 @@ exports = module.exports = function(req, res) {
 
 	locals.section = "about3";
 
-	view.render("about3");
+	view.render("about-page/about3");
 };
