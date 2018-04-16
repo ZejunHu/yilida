@@ -1,4 +1,4 @@
-<h1>Hi %recipient.firstName%</h1>
+<h1>Hi YiLiDa</h1>
 <p class="text-larger">An enquiry was just submitted to {{brand}}:</p>
 {{#if enquiry.email}}
 	<p class="text-larger">From
@@ -11,13 +11,10 @@
 	{{/if}}
 	</p>
 
-	{{#if enquiry.phone}}
-		<p class="text-larger">Phone: {{enquiry.phone}}</p>
+	{{#if enquiry.subject}}
+		<p class="text-larger">Phone: {{enquiry.subject}}</p>
 	{{/if}}
 
-	{{#if enquiry.enquiryType}}
-		<p class="text-larger">{{underscoreFormat enquiry 'enquiryType'}}</p>
-	{{/if}}
 
 	{{#if enquiry.message}}
 		{{{enquiry.message.html}}}
