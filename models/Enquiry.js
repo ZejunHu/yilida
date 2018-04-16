@@ -59,10 +59,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'enquiry-notification',
 			transport: 'mailgun',
 		}).send({
-			to: admins,
+			to: "info@yilida.com",
 			from: {
 				name: 'Yilida',
-				email: 'contact@yilida.com',
+				email: 'website@yilida.com',
 			},
 			subject: 'New Enquiry for Yilida',
 			enquiry: enquiry,
